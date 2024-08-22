@@ -1,0 +1,88 @@
+version: 2
+sources:
+  - name: statsbomb
+    description: Data loaded from StatsBombAPI
+    database: greenplum
+    schema: stage
+    loaded_at_field: load_date
+    tables:
+      - name: matches_ext
+        description: Matches
+        columns:
+          - name: match_id
+          - name: match_date
+          - name: home_score
+          - name: away_score
+          - name: last_updated
+          - name: match_week
+          - name: competition_competition_id
+          - name: season_season_id
+          - name: home_team_home_team_id
+          - name: home_team_home_team_name
+          - name: away_team_away_team_id
+          - name: away_team_away_team_name
+          - name: stadium_id
+          - name: stadium_name
+          - name: referee_id
+          - name: referee_name
+          - name: load_date
+      - name: cards_ext
+        description: Cards
+        columns:
+          - name: time
+          - name: card_type
+          - name: reason
+          - name: period
+          - name: match_id
+          - name: teams_lineup_player_id
+          - name: load_date
+      - name: competitions_ext
+        description: Competitions
+        columns:
+          - name: competition_id
+          - name: season_id
+          - name: country_name
+          - name: competition_name
+          - name: competition_gender
+          - name: competition_youth
+          - name: competition_international
+          - name: season_name
+          - name: load_date
+      - name: lineups_ext
+        description: Lineups
+        columns:
+          - name: match_id
+          - name: teams_team_id
+          - name: player_id
+          - name: player_name
+          - name: player_nickname
+          - name: jersey_number
+          - name: country_id
+          - name: country_name
+          - name: load_date
+      - name: managers_ext
+        description: Managers
+        columns:
+          - name: id
+          - name: name
+          - name: nickname
+          - name: dob
+          - name: country_id
+          - name: country_name
+          - name: team_id
+          - name: match_date
+          - name: load_date
+      - name: positions_ext
+        description: Positions
+        columns:
+          - name: position_id
+          - name: position
+          - name: "from"
+          - name: "to"
+          - name: from_period
+          - name: to_period
+          - name: start_reason
+          - name: end_reason
+          - name: match_id
+          - name: teams_lineup_player_id
+          - name: load_date
